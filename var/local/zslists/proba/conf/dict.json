@@ -1,0 +1,17 @@
+{
+"maillist":"%s levelezőlista"
+,"not_subscribed":"Nem vagy feliratkozva, listalevelet nem küldhetsz."
+,"subscribed":"Feliratkoztál a levelezőlistára.\r\nHa nem te kérted a regisztrációt, tiltsd le a listát erre a címre üres levelet írva: <%s>"
+,"unsubscribed":"Leiratkoztál a levelezőlistáról."
+,"locked":"A levelezőlista karbantartás miatt ideiglenesen zárolva van."
+,"blocked":"Címed blokkolva van, többet nem kapsz levelet a listától.\r\nFeloldáshoz írj a <%s> címre."
+,"private":"Ez egy zárt levelezőlista. Erre a címre írj kérelmet: %s"
+,"help":"A 'ZSLIST_LISTNAME' levelezőlistán az alábbi email címekre küldött levelekkel lehet beállításokat végezni:\r\nZSLIST_LISTNAME+subscribe@ZSLIST_HOST - feliratkozás a listára (amennyiben az nem zárt)\r\nZSLIST_LISTNAME+unsubsribe@ZSLIST_HOST - leiratkozás a listáról\r\nZSLIST_LISTNAME+block@ZSLIST_HOST - lista blokkolása. A levelezőlista soha többé nem fog levelet küldeni\r\nZSLIST_LISTNAME+votings@ZSLIST_HOST - érdeklődés a szavazásokról\r\nZSLIST_LISTNAME+vote@ZSLIST_HOST - szavazat leadása. A levél tárgyában szerepeljen az a szó (és csak az), amire szavazni kíván\r\n"
+,"no_open_vote":"Jelenleg nincs nyitott szavazás."
+,"invalid_vote":"A levél tárgyába nem írtál érvényes szavazatot"
+,"already_voted":"Már szavaztál"
+,"vote_succ":"Szavazatod rögzítettük"
+,"vote_err":"Hiba történt szavazatleadás során!"
+,"votings":"A levelezőlistán az alábbi szavazások voltak/vannak:"
+,"votings_vote":"%s-ig: \"%s\"\r\nLehetséges válaszok: %s\r\nEredménye: %s szavazat"
+}
