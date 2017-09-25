@@ -9,7 +9,10 @@ require_once("dict.class.php");
 abstract class zslist {
   
   static function db(){
-    $db = new zsPDO(ZSLIST_DB, '','', array(PDO::ATTR_PERSISTENT => true) );
+    if(defined("ZSLIST_DBUSER"))
+      $db = new zsPDO(ZSLIST_DB, ZSLIST_DBUSER,ZSLIST_DBPASS, array(PDO::ATTR_PERSISTENT => true) );
+    else
+      $db = new zsPDO(ZSLIST_DB, '','', array(PDO::ATTR_PERSISTENT => true) );
     if(!$db)throw new Exception("DB error: ".ZSLIST_DB);
     return $db;
   }
@@ -162,7 +165,6 @@ abstract class zslist {
       
       case "vote":
         self::vote($email, $head);
-        self::notifyadmin( mhack::decode($name)." <$email> voted");
         return true;
       
       case "votings":
@@ -204,6 +206,7 @@ abstract class zslist {
       $sr = mail("{$person->name} <{$person->email}>", $outmail["subj"], $outmail["body"], $outmail["head"] );
       if($sr)logger::info("mail sent to {$person->email}");else
       logger::error("mail to {$person->email} FAILED");
+      sleep(16);
     };
     
     self::db()->iterate("select * from person where blocked=0", $iter);
@@ -233,6 +236,7 @@ abstract class zslist {
     $subject = strtolower(imap_mime_header_decode($ma[1])[0]->text);
     
     $vote = false;
+    if(!$voting->selections)$voting->selections="[]";
     foreach( json_decode(strtolower($voting->selections)) as $selection )
       if(preg_match("/\b$selection\b/", $subject))
         $vote = $selection;
