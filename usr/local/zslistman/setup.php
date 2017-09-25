@@ -28,7 +28,7 @@ $N=ZSLIST_LISTNAME;
 
 # create db
 $DB = zslist::DB();
-foreach(explode(";",file_get_contents("db/sqlite3.db.schema")) as $line)
+foreach(explode(";",file_get_contents(__DIR__."/sqlite3.db.schema")) as $line)
     if($line=trim($line))
         $DB->exec($line);
 

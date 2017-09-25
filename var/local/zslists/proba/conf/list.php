@@ -16,7 +16,7 @@ define("ZSLIST_TRACEDIR", __DIR__."/../trace");
 define("ZSLIST_PRIVATE", 0);
 define("ZSLIST_LOCKED", 0);
 
-date_default_timezone_set("Etc/GMT+1");
+date_default_timezone_set("Europe/Budapest");
 error_reporting(E_ERROR+E_WARNING);
 mb_internal_encoding("UTF-8");
 
