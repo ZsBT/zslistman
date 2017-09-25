@@ -8,7 +8,9 @@ define("ZSLIST_FOOTER_TEXT", "---\r\nleiratkozas: <".ZSLIST_LISTNAME."+unsubscri
 define("ZSLIST_FOOTER_HTML", "leiratkozas: ".ZSLIST_LISTNAME."+unsubscribe@".ZSLIST_HOST);
 
 define("ZSLIST_DICT", __DIR__."/dict.json");
-define("ZSLIST_DB", "sqlite:".__DIR__."/../db/sqlite3.db");
+define("ZSLIST_DB", "mysql:hostname=localhost;dbname=zslist_proba");
+define("ZSLIST_DBUSER","zslistman");
+define("ZSLIST_DBPASS","almafa");
 define("ZSLIST_TRACEDIR", __DIR__."/../trace");
 
 define("ZSLIST_PRIVATE", 0);
