@@ -132,7 +132,7 @@ abstract class mhack {
     
     return array(
       "head"	=>implode("\r\n", $headers),
-      "subj"	=>$subject,
+      "subj"	=>self::encode($subject),
       "body"	=>&$expl->body,
     );
     
@@ -144,7 +144,7 @@ abstract class mhack {
   }
   
   function encode($decoded){
-    return sprintf("=?UTF-8?B?%s?=", base64($decoded) );
+    return sprintf("=?UTF-8?B?%s?=", base64_encode($decoded) );
   }
   
 }
